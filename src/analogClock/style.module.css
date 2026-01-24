@@ -1,0 +1,36 @@
+.handWrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: yellowgreen;
+}
+.handinnerWrapper {
+  width: 200px;
+  height: 200px;
+}
+
+.second {
+  width: 1px;
+  height: 50%;
+  display: inline-block;
+  background-color: green;
+  transform-origin: bottom;
+}
+
+.minutes {
+  width: 2px;
+  height: 50%;
+  display: inline-block;
+  background-color: grey;
+  transform-origin: bottom;
+}
+.hours {
+  width: 3px;
+  height: 50%;
+  display: inline-block;
+  background-color: black;
+  transform-origin: bottom;
+}
