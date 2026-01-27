@@ -1,4 +1,3 @@
-import { useState } from "react";
 import AnalogClock from "./analogClock";
 import PageSpeed from "./pageSpeed";
 import "./App.css";

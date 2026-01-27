@@ -14,6 +14,7 @@ const PageSpeed = () => {
     const getData = async () => {
       const resp = await fetch(file);
       //   const resp2 = await resp.json();
+      console.log("resp: ", resp);
       responseEndTime = Date.now();
 
       const loadTimeV = responseEndTime - responseStartTime;
