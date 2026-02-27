@@ -1,0 +1,17 @@
+.arrowUp {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent; /* Adjust size here */
+  border-right: 8px solid transparent; /* Adjust size here */
+  border-bottom: 8px solid black; /* Adjust color and size here */
+}
+
+.arrowDown {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent; /* Adjust size here */
+  border-right: 8px solid transparent; /* Adjust size here */
+  border-top: 8px solid black; /* Adjust color and size here */
+}

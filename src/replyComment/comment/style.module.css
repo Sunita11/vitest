@@ -1,0 +1,42 @@
+.commentContainer {
+  background-color: aliceblue;
+  padding: 8px;
+  border-radius: 12px;
+  margin: 8px 0;
+  color: black;
+}
+
+.commentChildWrapper {
+  padding-left: 20px;
+}
+
+.btn {
+  background-color: cadetblue;
+  border-radius: 8px;
+  min-width: 120px;
+  color: white;
+}
+
+.inputContainer__input {
+  padding: 10px;
+  margin-right: 12px;
+}
+
+.iconBtn {
+  padding: 8px;
+  cursor: pointer;
+  background-color: transparent;
+}
+.btnGroup {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0;
+}
+
+.reply {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  gap: 8px;
+  margin: 20px 8px;
+}
