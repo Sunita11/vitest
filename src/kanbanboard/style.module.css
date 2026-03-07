@@ -1,0 +1,33 @@
+.boardWrapper {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+.columnOuterWrapper {
+  display: flex;
+  gap: 20px;
+}
+
+.cardWrapper {
+  padding: 16px;
+  border: 1px solid rgb(193, 190, 190);
+  border-radius: 4px;
+  background-color: aliceblue;
+}
+.columnWrapper {
+  width: 33%;
+}
+
+.card {
+  background-color: rgb(214, 235, 253);
+  padding: 8px;
+  border: 1px solid rgb(174, 174, 252);
+  border-radius: 4px;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+}
+.btn {
+  padding: 2px 6px;
+  margin-left: 8px;
+}
