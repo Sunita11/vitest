@@ -2,13 +2,16 @@ import { useState } from "react";
 import AnalogClock from "./analogClock";
 import PageSpeed from "./pageSpeed";
 import useCustomTheme from "./customHooks/theme";
-import "./App.css";
-import TrafficLight from "./customHooks/trafficLight";
+
+import TrafficLight from "./trafficLight";
 import TODOList from "./todo";
 import ReplyCommentList from "./replyComment";
 import InView from "./inView";
 import FileExplorer from "./fileExplorer";
 import KanbanBoard from "./kanbanboard";
+import Users from "./examples/exampleFetch";
+
+import "./App.css";
 
 const fileSystemData = {
   id: "root",
@@ -93,6 +96,10 @@ function App() {
           >
             <TODOList />
           </InView>
+        </div>
+        <div className="component-wrapper">
+          <h4>Implement a custom hook to fetch API data with caching </h4>
+          <Users />
         </div>
       </main>
     </>
