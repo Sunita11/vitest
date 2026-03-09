@@ -12,10 +12,11 @@ const Counter = () => {
 
   return (
     <div>
-      <button onClick={increment}>+</button> Count: {count}
+      <button onClick={increment}>Increment</button> Count: {count}
       <button onClick={decrement} disabled={count === 0}>
         -
       </button>
+      <div data-testid="current-count">{count}</div>
     </div>
   );
 };

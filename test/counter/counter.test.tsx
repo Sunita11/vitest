@@ -1,8 +1,8 @@
 // @vitest-environment happy-dom
 import React from "react";
-import userEvent from "@testing-library/user-event";
-import { screen, render } from "@testing-library/react";
-import { expect, it, test } from "vitest";
+import { screen } from "@testing-library/react";
+import { render } from "./../utilities";
+import { expect, test } from "vitest";
 import Counter from "./index";
 
 test("it should render the component", () => {
@@ -10,7 +10,11 @@ test("it should render the component", () => {
   screen.debug(document.body);
 });
 
-test.todo(
-  "it should increment when increment button is clicked",
-  async () => {}
-);
+test("it should increment when increment button is clicked", async () => {
+  const { user } = render(<Counter />);
+  const currentCount = screen.getByTestId("current-count");
+  expect(currentCount).toHaveTextContent("0");
+  const btn = screen.getByRole("button", { name: "Increment" });
+  await user.click(btn);
+  expect(currentCount).toHaveTextContent("1");
+});
