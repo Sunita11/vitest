@@ -76,13 +76,7 @@ const ReplyCommentList = () => {
 
   return (
     <div>
-      <Comment
-        comment={commentsData}
-        cb={callback}
-        // onAdd={onAdd}
-        // onEdit={onEdit}
-        // onReply={onReply}
-      />
+      <Comment comment={commentsData} cb={callback} />
     </div>
   );
 };

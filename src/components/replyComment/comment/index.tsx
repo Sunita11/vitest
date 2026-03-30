@@ -1,15 +1,12 @@
 import { type FC, useState, useRef } from "react";
-import { ArrowUp, ArrowDown } from "./../icons";
-import { type OpType } from "./../index";
+import { ArrowUp, ArrowDown } from "../icons";
+import { type OpType } from "../index";
 
 import styles from "./style.module.css";
 
 type CommentType = {
   comment: any;
   cb: (type: OpType, id: number, value: string) => void;
-  // onAdd: (arg: string) => void;
-  // onEdit: (id: number, value: string) => void;
-  // onReply: (id: number, value: string) => void;
 };
 const Comment: FC<CommentType> = (props) => {
   const { comment, cb } = props;
@@ -43,8 +40,6 @@ const Comment: FC<CommentType> = (props) => {
 
   const onEditSaveHandler = () => {
     // on save
-    // onEdit(comment.id, value);
-    cb?.("edit", comment.id, value);
     setIsEditMode(false);
   };
 
@@ -60,7 +55,6 @@ const Comment: FC<CommentType> = (props) => {
     // @ts-ignore
     const value = replyRef?.current?.value ?? "";
     if (value) {
-      // onReply(comment.id, value);
       cb?.("reply", comment.id, value);
       // @ts-ignore
       replyRef.current.value = "";
@@ -161,14 +155,7 @@ const Comment: FC<CommentType> = (props) => {
       {isExpanded && (
         <div className={styles.commentChildWrapper}>
           {comment?.items?.map((item: any) => (
-            <Comment
-              key={item.id}
-              comment={item}
-              cb={cb}
-              // onAdd={onAdd}
-              // onEdit={onEdit}
-              // onReply={onReply}
-            />
+            <Comment key={item.id} comment={item} cb={cb} />
           ))}
         </div>
       )}

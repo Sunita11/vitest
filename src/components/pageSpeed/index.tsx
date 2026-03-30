@@ -7,7 +7,7 @@ const PageSpeed = () => {
   const file =
     "https://rukminim2.flixcart.com/fk-p-flap/1960/1960/image/0d9296346e8ec6b5.jpg?q=20";
 
-  const fileSize = 1000 * 1024 * 1024;
+  const fileSize = 1000 * 1024 * 1024; // 1000 MB
 
   useEffect(() => {
     responseStartTime = Date.now();
@@ -25,7 +25,7 @@ const PageSpeed = () => {
   }, []);
 
   console.log("loadTime: ", loadTime);
-  return <div>Upload Speed: {loadTime / fileSize}</div>;
+  return <div>Upload Speed: {loadTime / fileSize}</div>; // mbps
 };
 
 export default PageSpeed;
