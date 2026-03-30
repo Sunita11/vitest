@@ -1,4 +1,4 @@
-import { NavLink, Link } from "react-router";
+import { NavLink } from "react-router";
 import styles from "./style.module.css";
 
 function Header() {
