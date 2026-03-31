@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 
+type Theme = "light" | "dark";
 const useCustomTheme = (storageKey: string = "theme") => {
-  const [theme, setTheme] = useState(() => {
+  const [theme, setTheme] = useState<Theme>(() => {
     try {
       const saved = localStorage.getItem(storageKey);
       if (saved === "light" || saved === "dark") return saved;
@@ -22,7 +23,7 @@ const useCustomTheme = (storageKey: string = "theme") => {
 
   const setLight = () => setTheme("light");
   const setDark = () => setTheme("dark");
-  const toggle = () => setTheme((t) => (t === "dark" ? "ligth" : "dark"));
+  const toggle = () => setTheme((t) => (t === "dark" ? "light" : "dark"));
 
   useEffect(() => {
     try {
@@ -32,6 +33,7 @@ const useCustomTheme = (storageKey: string = "theme") => {
       const root = document.documentElement;
       root.dataset.theme = theme === "dark" ? "dark" : "light";
       root.classList.toggle("dark", theme === "dark");
+      root.classList.toggle("light", theme !== "dark");
     } catch {}
   }, [storageKey, theme]);
   return { theme, isDark, setLight, setDark, toggle };

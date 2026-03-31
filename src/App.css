@@ -53,3 +53,19 @@
 main {
   margin-top: 40px;
 }
+
+.dark {
+  & body {
+    background-color: rgb(97, 97, 97);
+    color: white;
+  }
+
+  & header {
+    background-color: rgb(61, 61, 61);
+    color: white;
+
+    & a {
+      color: white;
+    }
+  }
+}

@@ -5,14 +5,15 @@ import KanbanBoard from "./pages/kanban";
 import Reply from "./pages/replyComment";
 import Header from "./components/header";
 
+import { ThemeContextProvider } from "./context/theme";
+
 import "./App.css";
 
 function App() {
   return (
-    <>
+    <ThemeContextProvider>
       <BrowserRouter>
         <Header />
-
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="accessibility" element={<CheckAccessibilty />} />
@@ -20,7 +21,7 @@ function App() {
           <Route path="reply" element={<Reply />} />
         </Routes>
       </BrowserRouter>
-    </>
+    </ThemeContextProvider>
   );
 }
 
