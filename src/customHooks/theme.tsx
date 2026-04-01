@@ -2,22 +2,24 @@ import { useState, useEffect } from "react";
 
 type Theme = "light" | "dark";
 const useCustomTheme = (storageKey: string = "theme") => {
-  const [theme, setTheme] = useState<Theme>(() => {
+  const defaultTheme = () => {
     try {
       const saved = localStorage.getItem(storageKey);
       if (saved === "light" || saved === "dark") return saved;
     } catch {}
 
     if (typeof window !== undefined && window?.matchMedia) {
-      return window.matchMedia(
-        // @ts-ignore
-        "(prefers-color-scheme: dark)".matches
-      )
+      const preferedColorScheme = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches
         ? "dark"
         : "light";
+      return preferedColorScheme;
     }
     return "light";
-  });
+  };
+  console.log("defaultTheme: ", defaultTheme());
+  const [theme, setTheme] = useState<Theme>(defaultTheme());
 
   const isDark = theme === "dark";
 

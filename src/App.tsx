@@ -4,6 +4,7 @@ import CheckAccessibilty from "./components/accessibilty";
 import KanbanBoard from "./pages/kanban";
 import Reply from "./pages/replyComment";
 import Header from "./components/header";
+import PackagingList from "./pages/packaging-list";
 
 import { ThemeContextProvider } from "./context/theme";
 
@@ -19,6 +20,7 @@ function App() {
           <Route path="accessibility" element={<CheckAccessibilty />} />
           <Route path="kanban" element={<KanbanBoard />} />
           <Route path="reply" element={<Reply />} />
+          <Route path="packaging-list" element={<PackagingList />} />
         </Routes>
       </BrowserRouter>
     </ThemeContextProvider>

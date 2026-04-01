@@ -1,0 +1,43 @@
+.inpWrapper {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+
+  & input {
+    border: none;
+    border-radius: 8px 0 0 8px;
+  }
+
+  & button {
+    border-radius: 0 8px 8px 0px;
+  }
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 8px 0;
+  gap: 24px;
+}
+
+.col {
+  padding: 8px;
+  border: 1px solid lightgray;
+}
+
+.outerItemWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.btn {
+  padding: 4px 12px;
+  margin: 0 8px;
+}
+
+.btnBottom {
+  padding: 4px 12px;
+  width: 100%;
+  border-radius: 0;
+  margin: 0;
+}

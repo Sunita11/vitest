@@ -1,42 +1,45 @@
 import { NavLink } from "react-router";
 import styles from "./style.module.css";
-
+type LinkT = {
+  to: string;
+  title: string;
+};
+const LinksData: LinkT[] = [
+  {
+    to: "/",
+    title: "Home",
+  },
+  {
+    to: "/kanban",
+    title: "Kanban",
+  },
+  {
+    to: "/reply",
+    title: "Reply Comment",
+  },
+  {
+    to: "/packaging-list",
+    title: "Packaging List",
+  },
+  {
+    to: "/accessibility",
+    title: "Accessibility",
+  },
+];
 function Header() {
   return (
     <header className={styles.nav}>
       <nav>
-        <div className={styles.navItem}>
-          <NavLink
-            to="/"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Home
-          </NavLink>
-        </div>
-        <div className={styles.navItem}>
-          <NavLink
-            to="/kanban"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Kanban
-          </NavLink>
-        </div>
-        <div className={styles.navItem}>
-          <NavLink
-            to="/reply"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Reply Comment
-          </NavLink>
-        </div>
-        <div className={styles.navItem}>
-          <NavLink
-            to="/accessibility"
-            className={({ isActive }) => (isActive ? styles.active : "")}
-          >
-            Accessibility
-          </NavLink>
-        </div>
+        {LinksData.map((link: LinkT) => (
+          <div className={styles.navItem}>
+            <NavLink
+              to={link.to}
+              className={({ isActive }) => (isActive ? styles.active : "")}
+            >
+              {link.title}
+            </NavLink>
+          </div>
+        ))}
       </nav>
     </header>
   );
