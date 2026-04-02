@@ -22,13 +22,17 @@ const LinksData: LinkT[] = [
     title: "Packaging List",
   },
   {
+    to: "/rating-card",
+    title: "Rating Card",
+  },
+  {
     to: "/accessibility",
     title: "Accessibility",
   },
 ];
 function Header() {
   return (
-    <header className={styles.nav}>
+    <header className={styles.header}>
       <nav>
         {LinksData.map((link: LinkT) => (
           <div className={styles.navItem}>

@@ -1,8 +1,10 @@
-.nav {
+.header {
   position: fixed;
-  width: 100%;
-  top: 0;
+  width: 20%;
+  height: 100%;
   left: 0;
+  top: 0;
+  padding: 2rem;
   background-color: whitesmoke;
   z-index: 1;
 }
@@ -11,7 +13,7 @@
 }
 
 .navItem {
-  display: inline-block;
   padding: 8px;
   margin: 0 4px;
+  text-align: left;
 }

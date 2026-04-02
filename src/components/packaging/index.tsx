@@ -67,7 +67,7 @@ const PackagingList: FC = (): ReactElement => {
   return (
     <div className={styles.packagingWrapper}>
       <div className={styles.inpWrapper}>
-        <input name="addItem" ref={inpRef} />
+        <input name="addItem" placeholder="Enter Item" ref={inpRef} />
         <button className={styles.btnTop} onClick={onAdd}>
           Add Item
         </button>
