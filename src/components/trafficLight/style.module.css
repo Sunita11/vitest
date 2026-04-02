@@ -1,0 +1,34 @@
+.light-0,
+.light-1,
+.light-2 {
+  display: inline-block;
+  height: 100px;
+  width: 100px;
+  border: 1px solid rgb(57, 56, 56);
+  border-radius: 50%;
+  opacity: 0.25;
+
+  &.active {
+    opacity: 1;
+  }
+}
+
+.light-0 {
+  background-color: red;
+}
+
+.light-1 {
+  background-color: green;
+}
+.light-2 {
+  background-color: yellow;
+}
+
+.trafficWrapper {
+  display: flex;
+  flex-flow: column;
+  padding: 16px;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: max-content;
+}
