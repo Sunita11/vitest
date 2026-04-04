@@ -28,6 +28,17 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  color: light-dark(#333b3c, #efefec);
+  background-color: light-dark(#efedea, #223a2c);
+}
+
+header {
+  color: light-dark(#333b3c, #efefec);
+  background-color: light-dark(#efedea, #4d6a58);
+
+  & a {
+    color: light-dark(#333b3c, #efefec);
+  }
 }
 
 h1 {
