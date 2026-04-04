@@ -26,6 +26,10 @@ const LinksData: LinkT[] = [
     title: "Rating Card",
   },
   {
+    to: "/tic-tac-toe",
+    title: "Tic Tac Toe",
+  },
+  {
     to: "/accessibility",
     title: "Accessibility",
   },
@@ -35,7 +39,7 @@ function Header() {
     <header className={styles.header}>
       <nav>
         {LinksData.map((link: LinkT) => (
-          <div className={styles.navItem}>
+          <div className={styles.navItem} key={link.title}>
             <NavLink
               to={link.to}
               className={({ isActive }) => (isActive ? styles.active : "")}

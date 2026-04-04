@@ -64,5 +64,5 @@ it("Remove an item", async () => {
   const removeButton = screen.getByRole("button", { name: "Remove" });
   await user.click(removeButton);
 
-  //   waitFor(() => expect(removeButton).not.toBeInTheDocument());
+  await waitFor(() => expect(removeButton).not.toBeInTheDocument());
 });

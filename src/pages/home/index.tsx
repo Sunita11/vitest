@@ -60,56 +60,54 @@ function Home() {
   console.log("showDialog: ", showDialog);
   return (
     <>
-      <main>
-        <div className={styles.componentWrapper}>
-          <h4>Reusable Modal</h4>
-          <button onClick={toggleModal}>Click for showing Modal</button>
-          {showDialog && (
-            <Modal name="example" show={showDialog} close={toggleModal}>
-              <div>Modal content</div>
-            </Modal>
-          )}
-        </div>
+      <div className={styles.componentWrapper}>
+        <h4>Reusable Modal</h4>
+        <button onClick={toggleModal}>Click for showing Modal</button>
+        {showDialog && (
+          <Modal name="example" show={showDialog} close={toggleModal}>
+            <div>Modal content</div>
+          </Modal>
+        )}
+      </div>
 
-        <div className={styles.componentWrapper}>
-          <h4>File Explorer</h4>
-          <FileExplorer data={fileData} />
-        </div>
+      <div className={styles.componentWrapper}>
+        <h4>File Explorer</h4>
+        <FileExplorer data={fileData} />
+      </div>
 
-        <div className={styles.componentWrapper}>
-          <h4>Analog Clock</h4>
-          <AnalogClock />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>PageSpeed</h4>
-          <PageSpeed />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Theme</h4>
-          <button onClick={toggle}>
-            Change Theme: {isDark ? "dark" : "light"}
-          </button>
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Traffic Light</h4>
-          <TrafficLight />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>ToDO List + InView </h4>
-          <InView
-            elementId="todolist"
-            inViewCallback={(arg: any) => {
-              console.log("todolist is visible", arg);
-            }}
-          >
-            <TODOList />
-          </InView>
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Implement a custom hook to fetch API data with caching </h4>
-          <Users />
-        </div>
-      </main>
+      <div className={styles.componentWrapper}>
+        <h4>Analog Clock</h4>
+        <AnalogClock />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>PageSpeed</h4>
+        <PageSpeed />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Theme</h4>
+        <button onClick={toggle}>
+          Change Theme: {isDark ? "dark" : "light"}
+        </button>
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Traffic Light</h4>
+        <TrafficLight />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>ToDO List + InView </h4>
+        <InView
+          elementId="todolist"
+          inViewCallback={(arg: any) => {
+            console.log("todolist is visible", arg);
+          }}
+        >
+          <TODOList />
+        </InView>
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Implement a custom hook to fetch API data with caching </h4>
+        <Users />
+      </div>
     </>
   );
 }
