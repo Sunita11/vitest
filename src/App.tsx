@@ -6,6 +6,7 @@ import Reply from "./pages/replyComment";
 import PackagingList from "./pages/packaging-list";
 import RatingCard from "./pages/ratingCard";
 import Tic from "./pages/tictactoe";
+import VirtualList from "./pages/virtualisation";
 
 import { ThemeContextProvider } from "./context/theme";
 
@@ -25,6 +26,7 @@ function App() {
             <Route path="packaging-list" element={<PackagingList />} />
             <Route path="rating-card" element={<RatingCard />} />
             <Route path="tic-tac-toe" element={<Tic />} />
+            <Route path="virtualisation" element={<VirtualList />} />
           </Routes>
         </Layout>
       </BrowserRouter>

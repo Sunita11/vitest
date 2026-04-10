@@ -30,6 +30,10 @@ const LinksData: LinkT[] = [
     title: "Tic Tac Toe",
   },
   {
+    to: "/virtualisation",
+    title: "List Virtualisation",
+  },
+  {
     to: "/accessibility",
     title: "Accessibility",
   },

@@ -9,6 +9,7 @@ import InView from "../../components/inView";
 import FileExplorer from "../../components/fileExplorer";
 import Users from "../../components/exampleFetch";
 import Modal from "../../components/modal";
+import useLocalStorage from "../../customHooks/localstorage";
 
 import styles from "./style.module.css";
 
@@ -52,16 +53,18 @@ function Home() {
   const { isDark, toggle } = useCustomTheme();
   const [fileData, setFileDate] = useState(fileSystemData);
   const [showDialog, setShowDialog] = useState(false);
+  const [name, setName] = useLocalStorage("username", "Guest");
   console.log("setFileDate: ", setFileDate);
 
   const toggleModal = () => {
+    setName("sunita");
     setShowDialog(!showDialog);
   };
   console.log("showDialog: ", showDialog);
   return (
     <>
       <div className={styles.componentWrapper}>
-        <h4>Reusable Modal</h4>
+        <h4>Reusable Modal: {name}</h4>
         <button onClick={toggleModal}>Click for showing Modal</button>
         {showDialog && (
           <Modal name="example" show={showDialog} close={toggleModal}>

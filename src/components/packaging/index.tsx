@@ -13,7 +13,6 @@ const PackagingList: FC = (): ReactElement => {
 
   const onAdd = () => {
     if (newItem) {
-      //   const val = inpRef.current?.value;
       const newData = [...data];
       newData.push({
         id: Date.now(),
@@ -21,7 +20,6 @@ const PackagingList: FC = (): ReactElement => {
         packed: false,
       });
       setData(newData);
-      //   inpRef.current.value = "";
     }
     setNewItem("");
   };

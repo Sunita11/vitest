@@ -9,11 +9,14 @@ const CheckAccessibilty = () => {
     const key = e.key;
     console.log("keypressed: ", key);
     if (key === "1") toggle();
+    if (key === "Backspace") {
+      window.location.href = "/";
+    }
   };
   useEffect(() => {
-    document.addEventListener("keypress", handleKeyPressHandler);
+    document.addEventListener("keydown", handleKeyPressHandler);
     return () => {
-      document.removeEventListener("keypress", handleKeyPressHandler);
+      document.removeEventListener("keydown", handleKeyPressHandler);
     };
   }, []);
   return (
