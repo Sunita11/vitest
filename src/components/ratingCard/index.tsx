@@ -157,8 +157,8 @@ const Card = () => {
         {searchedItem && <CarComp data={searchedItem} />}
         {!searchedItem &&
           data.length > 0 &&
-          data?.map((item: Product) => (
-            <CarComp key={item.title} data={item} />
+          data?.map((item: Product, index: number) => (
+            <CarComp key={`${item.title}_${index}`} data={item} />
           ))}
       </div>
     </div>

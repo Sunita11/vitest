@@ -40,8 +40,8 @@
     position: absolute;
     width: 12px;
     height: 20px;
-    transform: translateX(-4px);
-    background-color: white;
+    transform: translate(-4px, 3px);
+    background-color: light-dark(#efedea, #223a2c);
   }
 }
 
