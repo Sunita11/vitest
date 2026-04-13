@@ -22,16 +22,28 @@ const LinksData: LinkT[] = [
     title: "Packaging List",
   },
   {
+    to: "/rating-card",
+    title: "Rating Card",
+  },
+  {
+    to: "/tic-tac-toe",
+    title: "Tic Tac Toe",
+  },
+  {
+    to: "/virtualisation",
+    title: "List Virtualisation",
+  },
+  {
     to: "/accessibility",
     title: "Accessibility",
   },
 ];
 function Header() {
   return (
-    <header className={styles.nav}>
+    <header className={styles.header}>
       <nav>
         {LinksData.map((link: LinkT) => (
-          <div className={styles.navItem}>
+          <div className={styles.navItem} key={link.title}>
             <NavLink
               to={link.to}
               className={({ isActive }) => (isActive ? styles.active : "")}

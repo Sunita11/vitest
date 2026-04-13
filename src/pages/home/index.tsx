@@ -9,6 +9,7 @@ import InView from "../../components/inView";
 import FileExplorer from "../../components/fileExplorer";
 import Users from "../../components/exampleFetch";
 import Modal from "../../components/modal";
+import useLocalStorage from "../../customHooks/localstorage";
 
 import styles from "./style.module.css";
 
@@ -52,64 +53,64 @@ function Home() {
   const { isDark, toggle } = useCustomTheme();
   const [fileData, setFileDate] = useState(fileSystemData);
   const [showDialog, setShowDialog] = useState(false);
+  const [name, setName] = useLocalStorage("username", "Guest");
   console.log("setFileDate: ", setFileDate);
 
   const toggleModal = () => {
+    setName("sunita");
     setShowDialog(!showDialog);
   };
   console.log("showDialog: ", showDialog);
   return (
     <>
-      <main>
-        <div className={styles.componentWrapper}>
-          <h4>Reusable Modal</h4>
-          <button onClick={toggleModal}>Click for showing Modal</button>
-          {showDialog && (
-            <Modal name="example" show={showDialog} close={toggleModal}>
-              <div>Modal content</div>
-            </Modal>
-          )}
-        </div>
+      <div className={styles.componentWrapper}>
+        <h4>Reusable Modal: {name}</h4>
+        <button onClick={toggleModal}>Click for showing Modal</button>
+        {showDialog && (
+          <Modal name="example" show={showDialog} close={toggleModal}>
+            <div>Modal content</div>
+          </Modal>
+        )}
+      </div>
 
-        <div className={styles.componentWrapper}>
-          <h4>File Explorer</h4>
-          <FileExplorer data={fileData} />
-        </div>
+      <div className={styles.componentWrapper}>
+        <h4>File Explorer</h4>
+        <FileExplorer data={fileData} />
+      </div>
 
-        <div className={styles.componentWrapper}>
-          <h4>Analog Clock</h4>
-          <AnalogClock />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>PageSpeed</h4>
-          <PageSpeed />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Theme</h4>
-          <button onClick={toggle}>
-            Change Theme: {isDark ? "dark" : "light"}
-          </button>
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Traffic Light</h4>
-          <TrafficLight />
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>ToDO List + InView </h4>
-          <InView
-            elementId="todolist"
-            inViewCallback={(arg: any) => {
-              console.log("todolist is visible", arg);
-            }}
-          >
-            <TODOList />
-          </InView>
-        </div>
-        <div className={styles.componentWrapper}>
-          <h4>Implement a custom hook to fetch API data with caching </h4>
-          <Users />
-        </div>
-      </main>
+      <div className={styles.componentWrapper}>
+        <h4>Analog Clock</h4>
+        <AnalogClock />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>PageSpeed</h4>
+        <PageSpeed />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Theme</h4>
+        <button onClick={toggle}>
+          Change Theme: {isDark ? "dark" : "light"}
+        </button>
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Traffic Light</h4>
+        <TrafficLight />
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>ToDO List + InView </h4>
+        <InView
+          elementId="todolist"
+          inViewCallback={(arg: any) => {
+            console.log("todolist is visible", arg);
+          }}
+        >
+          <TODOList />
+        </InView>
+      </div>
+      <div className={styles.componentWrapper}>
+        <h4>Implement a custom hook to fetch API data with caching </h4>
+        <Users />
+      </div>
     </>
   );
 }

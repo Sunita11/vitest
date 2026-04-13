@@ -1,8 +1,11 @@
+* {
+  box-sizing: border-box;
+}
 #root {
   width: 100%;
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2rem 2rem 2rem 18rem;
   text-align: center;
 }
 

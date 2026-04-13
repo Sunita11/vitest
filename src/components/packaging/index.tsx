@@ -1,4 +1,4 @@
-import { type FC, useState, useRef, type ReactElement } from "react";
+import { type FC, useState, type ReactElement } from "react";
 
 import styles from "./style.module.css";
 
@@ -9,23 +9,24 @@ interface Item {
 }
 const PackagingList: FC = (): ReactElement => {
   const [data, setData] = useState<Item[]>([]);
-  const inpRef = useRef(null);
+  const [newItem, setNewItem] = useState<string>("");
 
   const onAdd = () => {
-    // @ts-expect-error
-    if (inpRef.current && inpRef.current?.value) {
-      // @ts-expect-error
-      const val = inpRef.current?.value;
+    if (newItem) {
       const newData = [...data];
       newData.push({
         id: Date.now(),
-        text: val,
+        text: newItem,
         packed: false,
       });
       setData(newData);
-      //@ts-expect-error
-      inpRef.current.value = "";
     }
+    setNewItem("");
+  };
+
+  const onNewItemChange = (e: any) => {
+    const val = e.target.value;
+    setNewItem(val);
   };
 
   const onEdit = (id: number, val: string) => {
@@ -66,9 +67,21 @@ const PackagingList: FC = (): ReactElement => {
   const notPacked = data.filter((item: Item) => item.packed === false) ?? [];
   return (
     <div className={styles.packagingWrapper}>
+      <h4>Packing List</h4>
+      <label className={styles.label} htmlFor="addItem">
+        New Item Name
+      </label>
+
       <div className={styles.inpWrapper}>
-        <input name="addItem" ref={inpRef} />
-        <button className={styles.btnTop} onClick={onAdd}>
+        <input
+          name="addItem"
+          id="addItem"
+          value={newItem}
+          placeholder="Enter Item"
+          onChange={onNewItemChange}
+        />
+
+        <button className={styles.btnTop} onClick={onAdd} disabled={!newItem}>
           Add Item
         </button>
       </div>
@@ -141,11 +154,16 @@ const ItemComp: FC<ItemCompProp> = (props): ReactElement => {
   return (
     <div className={styles.outerItemWrapper}>
       <div>
-        <input type="checkbox" checked={packed} onChange={onChangeHandler} />
+        <input
+          type="checkbox"
+          id={"" + id}
+          checked={packed}
+          onChange={onChangeHandler}
+        />
         {editMode ? (
           <input value={inp} onChange={onInpChangeHandler} />
         ) : (
-          <span>{text}</span>
+          <label htmlFor={"" + id}>{text}</label>
         )}
       </div>
       <div>
@@ -159,7 +177,7 @@ const ItemComp: FC<ItemCompProp> = (props): ReactElement => {
           </button>
         )}
         <button className={styles.btn} onClick={onDeleteHandler}>
-          Delete
+          Remove
         </button>
       </div>
     </div>

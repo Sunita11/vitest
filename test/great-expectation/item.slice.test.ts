@@ -33,7 +33,7 @@ it("default new items to a packed status of false", () => {
   expect(item.packed).toBe(false);
 });
 
-it.todo("support removing an item", () => {
+it("support removing an item", () => {
   expect.hasAssertions();
   const state = [
     {
