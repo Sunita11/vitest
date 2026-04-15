@@ -1,7 +1,6 @@
 import { useState } from "react";
 import AnalogClock from "../../components/analogClock";
 import PageSpeed from "../../components/pageSpeed";
-import useCustomTheme from "../../customHooks/theme";
 
 import TrafficLight from "../../components/trafficLight";
 import TODOList from "../../components/todo";
@@ -9,7 +8,11 @@ import InView from "../../components/inView";
 import FileExplorer from "../../components/fileExplorer";
 import Users from "../../components/exampleFetch";
 import Modal from "../../components/modal";
+import MObserver from "../../components/observer/mutation";
+
+// custom hooks
 import useLocalStorage from "../../customHooks/localstorage";
+import useCustomTheme from "../../customHooks/theme";
 
 import styles from "./style.module.css";
 
@@ -63,6 +66,10 @@ function Home() {
   console.log("showDialog: ", showDialog);
   return (
     <>
+      <div className={styles.componentWrapper}>
+        <h4>Mutation Observer</h4>
+        <MObserver />
+      </div>
       <div className={styles.componentWrapper}>
         <h4>Reusable Modal: {name}</h4>
         <button onClick={toggleModal}>Click for showing Modal</button>
