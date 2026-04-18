@@ -5,13 +5,13 @@ type Executor<T> = (
   reject: (err: unknown) => void
 ) => void;
 class MyPromise<T = unknown> {
-  private onResolve?: ResolveHandler<T>;
-  private onReject?: RejectHandler;
   private fulfilled = false;
   private isRejected = false;
   private isCalled = false;
   private value?: T;
   private error?: unknown;
+  private onResolve?: ResolveHandler<T>;
+  private onReject?: RejectHandler;
   static all: (promises: Promise<unknown>[]) => void;
 
   constructor(executor: Executor<T>) {

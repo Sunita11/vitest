@@ -11,7 +11,7 @@ reversewithSmiley2("ab😊jk👍🏽a🙂");
 function flatten(arr: any[]): number[] {
   return arr.reduce(
     (acc: number[], item: number | number[]) =>
-      Array.isArray(item) ? acc.concat(flatten(item)) : acc.concat(item),
+      acc.concat(Array.isArray(item) ? flatten(item) : item),
     []
   );
 }
