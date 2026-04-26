@@ -1,4 +1,6 @@
 import { useState } from "react";
+
+import Dice from "../../components/dice";
 import AnalogClock from "../../components/analogClock";
 import PageSpeed from "../../components/pageSpeed";
 
@@ -53,6 +55,7 @@ const fileSystemData = {
   ],
 };
 function Home() {
+  // return <Dice count={4} />;
   const { isDark, toggle } = useCustomTheme();
   const [fileData, setFileDate] = useState(fileSystemData);
   const [showDialog, setShowDialog] = useState(false);

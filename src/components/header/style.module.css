@@ -6,6 +6,7 @@
   top: 0;
   padding: 2rem;
   z-index: 1;
+  border-right: 1px solid #d8d5d5;
 }
 .active {
   border-bottom: 1px solid blueviolet;

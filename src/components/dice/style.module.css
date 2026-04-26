@@ -1,0 +1,84 @@
+.diceOuterWrapper {
+  width: 200px;
+  height: 200px;
+  margin: 16px auto;
+  padding: 16px;
+  border: 2px solid #333;
+  border-radius: 4px;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five,
+.six {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+}
+
+.one {
+  justify-content: center;
+  align-items: center;
+}
+.two {
+  justify-content: space-between;
+
+  & .twoChild:first-child {
+    align-self: flex-start;
+  }
+  & .twoChild:last-child {
+    align-self: flex-end;
+  }
+}
+
+.three {
+  justify-content: space-between;
+
+  & .threeChild {
+    align-self: center;
+  }
+
+  & .threeChild:first-child {
+    align-self: flex-start;
+  }
+  & .threeChild:last-child {
+    align-self: flex-end;
+  }
+}
+
+.four {
+  justify-content: space-between;
+  & .fourChild {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+.five {
+  justify-content: space-between;
+
+  & .fiveChild {
+    align-self: center;
+  }
+
+  & .fiveChild:first-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  & .fiveChild:last-child {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
+
+.six {
+  justify-content: space-between;
+  & .sixChild {
+    display: flex;
+    justify-content: space-between;
+  }
+}

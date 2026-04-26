@@ -1,43 +1,11 @@
 import { NavLink } from "react-router";
+import data from "./navlinks.json";
 import styles from "./style.module.css";
 type LinkT = {
   to: string;
   title: string;
 };
-const LinksData: LinkT[] = [
-  {
-    to: "/",
-    title: "Home",
-  },
-  {
-    to: "/kanban",
-    title: "Kanban",
-  },
-  {
-    to: "/reply",
-    title: "Reply Comment",
-  },
-  {
-    to: "/packaging-list",
-    title: "Packaging List",
-  },
-  {
-    to: "/rating-card",
-    title: "Rating Card",
-  },
-  {
-    to: "/tic-tac-toe",
-    title: "Tic Tac Toe",
-  },
-  {
-    to: "/virtualisation",
-    title: "List Virtualisation",
-  },
-  {
-    to: "/accessibility",
-    title: "Accessibility",
-  },
-];
+const LinksData: LinkT[] = data;
 function Header() {
   return (
     <header className={styles.header}>

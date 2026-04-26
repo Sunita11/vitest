@@ -1,0 +1,46 @@
+[
+    {
+        "to": "/",
+        "title": "Home"
+    },
+    {
+        "to": "/dice",
+        "title": "Dice"
+    },
+    {
+        "to": "/kanban",
+        "title": "Kanban"
+    },
+    {
+        "to": "/file-explorer",
+        "title": "File Explorer"
+    },
+    {
+        "to": "/to-do-list",
+        "title": "To Do List"
+    },
+    {
+        "to": "/reply",
+        "title": "Reply Comment"
+    },
+    {
+        "to": "/packaging-list",
+        "title": "Packaging List"
+    },
+    {
+        "to": "/rating-card",
+        "title": "Rating Card"
+    },
+    {
+        "to": "/tic-tac-toe",
+        "title": "Tic Tac toe"
+    },
+    {
+        "to": "/virtualisation",
+        "title": "List Virtualisation"
+    },
+    {
+        "to": "/accessibility",
+        "title": "Accessibility"
+    }
+]
