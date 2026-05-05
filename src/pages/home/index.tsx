@@ -1,6 +1,5 @@
 import { useState } from "react";
 
-import Dice from "../../components/dice";
 import AnalogClock from "../../components/analogClock";
 import PageSpeed from "../../components/pageSpeed";
 
