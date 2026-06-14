@@ -35,7 +35,7 @@ const AnalogClock = () => {
           <span
             className={styles.hours}
             style={{
-              transform: `rotateZ(${currentTime.getHours() * 10}deg)`,
+              transform: `rotateZ(${currentTime.getHours() * 30}deg)`,
             }}
           ></span>
         </div>

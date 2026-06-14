@@ -82,3 +82,25 @@
     justify-content: space-between;
   }
 }
+
+.clockWrapper {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 1px solid red;
+  position: relative;
+}
+
+.second,
+.minute,
+.hour {
+  display: inline-block;
+  height: 50%;
+  width: 1px;
+  background: black;
+  transform-origin: bottom;
+}
+
+.hour {
+  width: 3px;
+}
