@@ -8,19 +8,19 @@ type FileSystemNode = {
   type: string;
 };
 
-const getComp = (data: any[]) => {
-  const comp = [];
-  if (data.length > 0) {
-    let i = 0;
-    while (i < data.length) {
-      const child = data[i++];
-      if (child.type === "folder") comp.push(<CompFolder {...child} />);
-      if (child.type === "file") comp.push(<CompFile {...child} />);
-    }
-  }
+// const getComp = (data: any[]) => {
+//   const comp = [];
+//   if (data.length > 0) {
+//     let i = 0;
+//     while (i < data.length) {
+//       const child = data[i++];
+//       if (child.type === "folder") comp.push(<CompFolder {...child} />);
+//       if (child.type === "file") comp.push(<CompFile {...child} />);
+//     }
+//   }
 
-  return comp;
-};
+//   return comp;
+// };
 const FileExplorer = ({ data }: { data: FileSystemNode }) => {
   return (
     <div className="file-explorer">
@@ -48,6 +48,20 @@ const CompFolder: FC<any> = (prop) => {
   const { name, children } = prop;
   const [expand, setExpand] = useState(false);
   let comp: any[] = [];
+
+  const getComp = (data: any[]) => {
+    const comp = [];
+    if (data.length > 0) {
+      let i = 0;
+      while (i < data.length) {
+        const child = data[i++];
+        if (child.type === "folder") comp.push(<CompFolder {...child} />);
+        if (child.type === "file") comp.push(<CompFile {...child} />);
+      }
+    }
+
+    return comp;
+  };
   if (children?.length > 0) {
     comp = getComp(children);
   }

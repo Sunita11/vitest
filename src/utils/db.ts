@@ -16,7 +16,6 @@ export function initMockDB(sample, count = 100, page = 10) {
   );
   let index = -1;
   function getPage(pointer) {
-    console.log("getPage: ", pointer);
     return new Promise((res) => {
       // setTimeout(() => {
       pointer < 0 || pointer > data.length - 1

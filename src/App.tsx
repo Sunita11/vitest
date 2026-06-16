@@ -8,6 +8,9 @@ import PackagingList from "./pages/packaging-list";
 import RatingCard from "./pages/ratingCard";
 import Tic from "./pages/tictactoe";
 import VirtualList from "./pages/virtualisation";
+import Dice from "./pages/dice";
+import TODO from "./pages/todo";
+import FileExp from "./pages/fileExplorer";
 
 import { ThemeContextProvider } from "./context/theme";
 
@@ -22,13 +25,16 @@ function App() {
           <Layout>
             <Routes>
               <Route path="/" element={<Home />} />
-              <Route path="accessibility" element={<CheckAccessibilty />} />
+              <Route path="dice" element={<Dice />} />
               <Route path="kanban" element={<KanbanBoard />} />
+              <Route path="to-do-list" element={<TODO />} />
+              <Route path="file-explorer" element={<FileExp />} />
               <Route path="reply" element={<Reply />} />
               <Route path="packaging-list" element={<PackagingList />} />
               <Route path="rating-card" element={<RatingCard />} />
               <Route path="tic-tac-toe" element={<Tic />} />
               <Route path="virtualisation" element={<VirtualList />} />
+              <Route path="accessibility" element={<CheckAccessibilty />} />
             </Routes>
           </Layout>
         </BrowserRouter>

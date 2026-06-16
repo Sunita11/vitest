@@ -6,9 +6,13 @@ const AnalogClock = () => {
   const [time, setTime] = useState<number>(Date.now());
 
   useEffect(() => {
-    setInterval(() => {
+    let timer;
+    timer = setInterval(() => {
       setTime(Date.now());
     }, 1000);
+    return () => {
+      clearInterval(timer);
+    };
   });
 
   const currentTime = new Date(time);
@@ -31,7 +35,7 @@ const AnalogClock = () => {
           <span
             className={styles.hours}
             style={{
-              transform: `rotateZ(${currentTime.getHours() * 10}deg)`,
+              transform: `rotateZ(${currentTime.getHours() * 30}deg)`,
             }}
           ></span>
         </div>

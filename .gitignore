@@ -24,3 +24,4 @@ dist-ssr
 *.sw?
 *.d.ts
 *.js
+coverage/*

@@ -125,8 +125,8 @@ const KanbanBoard = () => {
             onDragEnter={(e) => {
               onDragEnter(e, column.id);
             }}
-            onDragStart={onDragStart}
             onDrop={onDragEnter}
+            onDragStart={onDragStart}
             onDeleteTask={onDeleteTask}
           />
         ))}
